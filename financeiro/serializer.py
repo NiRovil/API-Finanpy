@@ -15,7 +15,7 @@ class ReceitaSerializer(serializers.ModelSerializer):
 class DespesaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Despesas
-        fields = ['descricao', 'valor', 'data']
+        fields = ['descricao', 'valor', 'data', 'categoria']
 
     def validate(self, data):
         if despesa_existe(data['descricao'], data['valor'], data['data']):
